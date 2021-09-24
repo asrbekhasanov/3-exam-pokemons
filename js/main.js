@@ -40,11 +40,11 @@ for (var pokemon of pokemons) {
     newPokemonHeight.setAttribute("class", "pokemon__height m-4")
     newPokemonCandy.setAttribute("class", "pokemon__candy mt-2")
     newPokemonMultipliersList.setAttribute("class", "pokemon__multipliers__list list-unstyled")
-    newPokemonMultipliersItem.setAttribute("class", "pokemon__multipliers__item")
+    newPokemonMultipliersItem.setAttribute("class", "pokemon__multipliers__item m-4")
     newPokemonWeaknessList.setAttribute("class", "pokemon__weakness__list list-unstyled")
-    newPokemonWeaknessItem.setAttribute("class", "pokemon__weakness__item")
+    newPokemonWeaknessItem.setAttribute("class", "pokemon__weakness__item mt-2")
     newPokemonEvolutionList.setAttribute("class", "pokemon__evolution__list list-unstyled")
-    newPokemonEvolutionItem.setAttribute("class", "pokemon__evolution__item")
+    newPokemonEvolutionItem.setAttribute("class", "pokemon__evolution__item m-4")
     
     
     
@@ -54,10 +54,14 @@ for (var pokemon of pokemons) {
     newPokemonTypeItem.textContent = pokemon.type.join(", ");
     newPokemonHeight.textContent = pokemon.height;
     newPokemonCandy.textContent = pokemon.candy;
+    newPokemonMultipliersItem.textContent = "multipliers: " + pokemon.multipliers;
+    newPokemonWeaknessItem.textContent = pokemon.weaknesses.join(", ");
+    newPokemonEvolutionItem.textContent = pokemon.prev_evolution;
     
     
     
     // Set attributes for img element (src/alt/width/heith...)
+
     newImg.setAttribute("src", pokemon.img)
     newImg.setAttribute("width", 120)
     newImg.setAttribute("height", 120)
@@ -74,7 +78,7 @@ for (var pokemon of pokemons) {
     newPokemonHeight.appendChild(newPokemonCandy);
     newPokemonMultipliersList.appendChild(newPokemonMultipliersItem);
     newDiv.appendChild(newPokemonMultipliersList);
-    newPokemonWeaknessList.appendChild(newPokemonWeaknessItem);
+    newPokemonMultipliersItem.appendChild(newPokemonWeaknessItem);
     newDiv.appendChild(newPokemonWeaknessList);
     newPokemonEvolutionList.appendChild(newPokemonEvolutionItem);
     newDiv.appendChild(newPokemonEvolutionList);
